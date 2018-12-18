@@ -3,21 +3,21 @@
 ## Procedure (with Default selections where possible):
 
 ### Create EKS Cluster
-1 - Choose Cluster Name
-2 - Select Kubernetes version
-3 - Create an IAM Role for the EKS Service and attach  the following permissions policies
-    a - AmazonEKSClusterPolicy - This policy provides Kubernetes the permissions it requires to manage resources on your behalf. Kubernetes requires Ec2:CreateTags permissions to place identifying information on EC2 resources including but not limited to Instances, Security Groups, and Elastic Network Interfaces.
-    b - AmazonEKSServicePolicy - This policy allows Amazon Elastic Container Service for Kubernetes to create and manage the necessary resources to operate EKS Clusters.
-4 - Select a VPC - For HA multi-AZ ex: us-east-2
-6 - Select Subnets - For HA subnets from multiple AZs ex: us-east-2a, us-east-2b, s-east-2c
-7 - Create and apply an appropriate SG
+1. Choose Cluster Name
+2. Select Kubernetes version
+3. Create an IAM Role for the EKS Service and attach  the following permissions policies
+    a. AmazonEKSClusterPolicy - This policy provides Kubernetes the permissions it requires to manage resources on your behalf. Kubernetes requires Ec2:CreateTags permissions to place identifying information on EC2 resources including but not limited to Instances, Security Groups, and Elastic Network Interfaces.
+    b. AmazonEKSServicePolicy - This policy allows Amazon Elastic Container Service for Kubernetes to create and manage the necessary resources to operate EKS Clusters.
+4. Select a VPC - For HA multi-AZ ex: us-east-2
+6. Select Subnets - For HA subnets from multiple AZs ex: us-east-2a, us-east-2b, s-east-2c
+7. Create and apply an appropriate SG
 
 ### Configure kubectl to connect to the cluster
-1 - Install aws cli
-2 - Install aws-iam-authenticator - `go get -u -v github.com/kubernetes-sigs/aws-iam-authenticator/cmd/aws-iam-authenticator`
-3 - Configure the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY_ID, AWS_DEFAULT_REGION for the IAM User and Region used via console respectively
-4 - Run `aws eks update-kubeconfig --name CLUSTER_NAME`
-5 - Verify the set-up by running  any kubectl command that queries the api server ex: `kubectl get svc`
+1. Install aws cli
+2. Install aws-iam-authenticator - `go get -u -v github.com/kubernetes-sigs/aws-iam-authenticator/cmd/aws-iam-authenticator`
+3. Configure the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY_ID, AWS_DEFAULT_REGION for the IAM User and Region used via console respectively
+4. Run `aws eks update-kubeconfig --name CLUSTER_NAME`
+5. Verify the set-up by running  any kubectl command that queries the api server ex: `kubectl get svc`
 
 ## How does aws-iam-authenticator work ? 
 Detailed info see [How does auth work in EKS with IAM Users ](http://marcinkaszynski.com/2018/07/12/eks-auth.html)
@@ -33,8 +33,8 @@ ex: `aws-iam-authenticator token -i CLUSTER_NAME`
     exec:
       apiVersion: client.authentication.k8s.io/v1alpha1
       args:
-      - token
-      - -i
-      - demo
+     . token
+     . -i
+     . demo
       command: aws-iam-authenticator
 ```
