@@ -15,7 +15,7 @@
 ### Configure kubectl to connect to the cluster
 1. Install aws cli
 2. Install aws-iam-authenticator - `go get -u -v github.com/kubernetes-sigs/aws-iam-authenticator/cmd/aws-iam-authenticator`
-3. Configure the AWS_ACCESS_KEY_ID, AWS_ACCESS_KEY_ID, AWS_DEFAULT_REGION for the IAM User and Region used via console respectively
+3. Configure the AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_DEFAULT_REGION for the IAM User and Region used via console respectively
 4. Run `aws eks update-kubeconfig --name CLUSTER_NAME`
 5. Verify the set-up by running  any kubectl command that queries the api server ex: `kubectl get svc`
 
