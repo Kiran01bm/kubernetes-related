@@ -3,5 +3,5 @@
 ## Resource Listing and Cloudshell outputs
 ![Alt text](demoaks.png?raw=true "")
 
-## Configure kubect
+## Configure kubectl
 ![Alt text](kubectl.png?raw=true "")
