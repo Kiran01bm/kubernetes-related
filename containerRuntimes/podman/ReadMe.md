@@ -13,32 +13,32 @@ Most of the attributes that make up the Pod are actually assigned to the “infr
 In the above diagram, notice the box above each container, conmon, this is the container monitor.  It is a small C Program that’s job is to watch the primary process of the container, and if the container dies, save the exit code.  It also holds open the tty of the container, so that it can be attached to later. This is what allows podman to run in detached mode (backgrounded), so podman can exit but conmon continues to run.  Each container has its own instance of conmon.
 
 
-List Podman Pods
+### List Podman Pods
 ```podman pod list or podman pod ps or podman pod ls```
-List Containers in a Podman Pod
+### List Containers in a Podman Pod
 ```podman ps -a --pod```
-Add Container to a pod
+### Add Container to a pod
 ```podman run -dt --pod PODNAME docker.io/library/alpine:latest top```
-Stop a Container in a Pod
+### Stop a Container in a Pod
 ```podman stop CONTAINERNAME```
-Start a Container in a Pod
+### Start a Container in a Pod
 ```podman start CONTAINERNAME```
-Stop Pod - This stops all the containers in the Pod
+### Stop Pod - This stops all the containers in the Pod
 ```podman pod stop PODNAME```
-Start Pod - This starts all the containers in the Pod
+### Start Pod - This starts all the containers in the Pod
 ```podman pod start PODNAME```
-Restart Pod - This restarts all the containers in the Pod
+### Restart Pod - This restarts all the containers in the Pod
 ```podman pod restart PODNAME```
-Pull an image from Docker Image store into Podmans Image store
+### Pull an image from Docker Image store into Podmans Image store
 ```podman pull docker-daemon:myimage:latest```
-Push image
+### Push image
 ```podman push quay.io/kiran01bm/myimage:lates```t
-Run Image
+### Run Image
 ```podman run -it quay.io/kiran01bm/myimage:latest  bash```
 ```podman run -dt quay.io/kiran01bm/myimage:latest```
-Generate Kubernetes Object definition for a running container
+### Generate Kubernetes Object definition for a running container
 ```podman generate kube CONTAINERNAME```
-Build - Podman’s build command contains a subset of the Buildah functionality. It uses the same code as **Buildah** for building.
+### Build - Podman’s build command contains a subset of the Buildah functionality. It uses the same code as **Buildah** for building.
 ```podman build```
-Inspect User Info - user is UID in container and husers is the UID on the host
+### Inspect User Info - user is UID in container and husers is the UID on the host
 ```podman top --latest user huser```
