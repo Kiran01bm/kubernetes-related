@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: app-db-policy
+spec:
+  # Assigning Ingress policy to the DB service
+  podSelector:
+    matchLabels:
+      role: dbPods
+  # Ingress rule - 
+  # 1. Allows pods with role label "role: willTalkToDB" running in any namespace with role label "role: hasPodsThatTalkToDB" to talk to DB.
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          role: hasPodsThatTalkToDB
+      podSelector:
+        matchLabels:
+          role: willTalkToDB
