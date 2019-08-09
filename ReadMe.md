@@ -14,7 +14,7 @@
 
 
 ## Offerings - OnPrem (popular ones)
-1. Anthos - GKE on Prem
+1. Anthos - GKE on Prem, Customers can deploy this on any compatible hardware and Google will manage the platform
 2. Kubernetes - Self-managed
 
 
