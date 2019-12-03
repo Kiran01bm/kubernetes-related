@@ -1,0 +1,49 @@
+# kiran@mymac: ~                                                                                                                                                                                           (17:14:10)
+ζ kubectl get deployment/nginx-deployment --v=6
+I1203 17:15:17.304244   37977 loader.go:359] Config loaded from file /Users/kiranmuddukrishna/.kube/config
+I1203 17:15:17.319416   37977 round_trippers.go:438] GET https://192.168.64.2:8443/apis/apps/v1/namespaces/default/deployments/nginx-deployment 200 OK in 8 milliseconds
+I1203 17:15:17.320206   37977 get.go:570] no kind is registered for the type v1beta1.Table in scheme "k8s.io/kubernetes/pkg/api/legacyscheme/scheme.go:29"
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   3/3     3            3           9m15s
+# kiran@mymac: ~                                                                                                                                                                                           (17:15:17)
+ζ kubectl get deployment/nginx-deployment --v=7
+I1203 17:15:21.193338   37995 loader.go:359] Config loaded from file /Users/kiranmuddukrishna/.kube/config
+I1203 17:15:21.198970   37995 round_trippers.go:416] GET https://192.168.64.2:8443/apis/apps/v1/namespaces/default/deployments/nginx-deployment
+I1203 17:15:21.198984   37995 round_trippers.go:423] Request Headers:
+I1203 17:15:21.198988   37995 round_trippers.go:426]     Accept: application/json;as=Table;v=v1beta1;g=meta.k8s.io, application/json
+I1203 17:15:21.198992   37995 round_trippers.go:426]     User-Agent: kubectl/v1.14.7 (darwin/amd64) kubernetes/8fca2ec
+I1203 17:15:21.206887   37995 round_trippers.go:441] Response Status: 200 OK in 7 milliseconds
+I1203 17:15:21.207217   37995 get.go:570] no kind is registered for the type v1beta1.Table in scheme "k8s.io/kubernetes/pkg/api/legacyscheme/scheme.go:29"
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   3/3     3            3           9m19s
+# kiran@mymac: ~                                                                                                                                                                                           (17:15:21)
+ζ kubectl get deployment/nginx-deployment --v=8
+I1203 17:15:26.490934   38008 loader.go:359] Config loaded from file /Users/kiranmuddukrishna/.kube/config
+I1203 17:15:26.496127   38008 round_trippers.go:416] GET https://192.168.64.2:8443/apis/apps/v1/namespaces/default/deployments/nginx-deployment
+I1203 17:15:26.496142   38008 round_trippers.go:423] Request Headers:
+I1203 17:15:26.496146   38008 round_trippers.go:426]     Accept: application/json;as=Table;v=v1beta1;g=meta.k8s.io, application/json
+I1203 17:15:26.496150   38008 round_trippers.go:426]     User-Agent: kubectl/v1.14.7 (darwin/amd64) kubernetes/8fca2ec
+I1203 17:15:26.504922   38008 round_trippers.go:441] Response Status: 200 OK in 8 milliseconds
+I1203 17:15:26.504944   38008 round_trippers.go:444] Response Headers:
+I1203 17:15:26.504949   38008 round_trippers.go:447]     Cache-Control: no-cache, private
+I1203 17:15:26.504952   38008 round_trippers.go:447]     Content-Type: application/json
+I1203 17:15:26.504955   38008 round_trippers.go:447]     Content-Length: 2504
+I1203 17:15:26.504958   38008 round_trippers.go:447]     Date: Tue, 03 Dec 2019 06:15:26 GMT
+I1203 17:15:26.504998   38008 request.go:942] Response Body: {"kind":"Table","apiVersion":"meta.k8s.io/v1beta1","metadata":{"selfLink":"/apis/apps/v1/namespaces/default/deployments/nginx-deployment","resourceVersion":"2223"},"columnDefinitions":[{"name":"Name","type":"string","format":"name","description":"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names","priority":0},{"name":"Ready","type":"string","format":"","description":"Number of the pod with ready state","priority":0},{"name":"Up-to-date","type":"string","format":"","description":"Total number of non-terminated pods targeted by this deployment that have the desired template spec.","priority":0},{"name":"Available","type":"string","format":"","description":"Total number of available pods (ready for at least minReady [truncated 1480 chars]
+I1203 17:15:26.505370   38008 get.go:570] no kind is registered for the type v1beta1.Table in scheme "k8s.io/kubernetes/pkg/api/legacyscheme/scheme.go:29"
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   3/3     3            3           9m24s
+# kiran@mymac: ~                                                                                                                                                                                           (17:15:26)
+ζ kubectl get deployment/nginx-deployment --v=9
+I1203 17:15:30.006132   38020 loader.go:359] Config loaded from file /Users/kiranmuddukrishna/.kube/config
+I1203 17:15:30.012320   38020 round_trippers.go:419] curl -k -v -XGET  -H "Accept: application/json;as=Table;v=v1beta1;g=meta.k8s.io, application/json" -H "User-Agent: kubectl/v1.14.7 (darwin/amd64) kubernetes/8fca2ec" 'https://192.168.64.2:8443/apis/apps/v1/namespaces/default/deployments/nginx-deployment'
+I1203 17:15:30.020042   38020 round_trippers.go:438] GET https://192.168.64.2:8443/apis/apps/v1/namespaces/default/deployments/nginx-deployment 200 OK in 7 milliseconds
+I1203 17:15:30.020068   38020 round_trippers.go:444] Response Headers:
+I1203 17:15:30.020073   38020 round_trippers.go:447]     Content-Length: 2504
+I1203 17:15:30.020077   38020 round_trippers.go:447]     Date: Tue, 03 Dec 2019 06:15:30 GMT
+I1203 17:15:30.020080   38020 round_trippers.go:447]     Cache-Control: no-cache, private
+I1203 17:15:30.020082   38020 round_trippers.go:447]     Content-Type: application/json
+I1203 17:15:30.020111   38020 request.go:942] Response Body: {"kind":"Table","apiVersion":"meta.k8s.io/v1beta1","metadata":{"selfLink":"/apis/apps/v1/namespaces/default/deployments/nginx-deployment","resourceVersion":"2223"},"columnDefinitions":[{"name":"Name","type":"string","format":"name","description":"Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated. More info: http://kubernetes.io/docs/user-guide/identifiers#names","priority":0},{"name":"Ready","type":"string","format":"","description":"Number of the pod with ready state","priority":0},{"name":"Up-to-date","type":"string","format":"","description":"Total number of non-terminated pods targeted by this deployment that have the desired template spec.","priority":0},{"name":"Available","type":"string","format":"","description":"Total number of available pods (ready for at least minReadySeconds) targeted by this deployment.","priority":0},{"name":"Age","type":"string","format":"","description":"CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.\n\nPopulated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata","priority":0},{"name":"Containers","type":"string","format":"","description":"Names of each container in the template.","priority":1},{"name":"Images","type":"string","format":"","description":"Images referenced by each container in the template.","priority":1},{"name":"Selector","type":"string","format":"","description":"Label selector for pods. Existing ReplicaSets whose pods are selected by this will be the ones affected by this deployment.","priority":1}],"rows":[{"cells":["nginx-deployment","3/3",3,3,"9m28s","nginx","nginx:1.7.9","app=nginx"],"object":{"kind":"PartialObjectMetadata","apiVersion":"meta.k8s.io/v1beta1","metadata":{"name":"nginx-deployment","namespace":"default","selfLink":"/apis/apps/v1/namespaces/default/deployments/nginx-deployment","uid":"fdaa354f-5185-4c70-8323-4d913ecbcd19","resourceVersion":"2223","generation":5,"creationTimestamp":"2019-12-03T06:06:02Z","annotations":{"deployment.kubernetes.io/revision":"1"}}}}]}
+I1203 17:15:30.020513   38020 get.go:570] no kind is registered for the type v1beta1.Table in scheme "k8s.io/kubernetes/pkg/api/legacyscheme/scheme.go:29"
+NAME               READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-deployment   3/3     3            3           9m28s
