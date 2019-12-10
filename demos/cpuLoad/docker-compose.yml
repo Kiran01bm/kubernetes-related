@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  cpuloadgen:
+    build: .
+    image: springboot:cpuloadgen
+    container_name: sboot_cpuloadgen
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 100M
+        reservations:
+          cpus: '0.25'
+          memory: 50M

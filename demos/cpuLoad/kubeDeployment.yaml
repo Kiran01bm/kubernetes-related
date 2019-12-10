@@ -1,0 +1,27 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: cpuloadgen-deployment
+spec:
+  selector:
+    matchLabels:
+      app: cpuloadgen
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cpuloadgen
+    spec:
+      containers:
+      - name: cpuloadgen
+        image: springboot/cpuloadgen:latest
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"
+          limits:
+            memory: "128Mi"
+            cpu: "150m"
+        imagePullPolicy: IfNotPresent
