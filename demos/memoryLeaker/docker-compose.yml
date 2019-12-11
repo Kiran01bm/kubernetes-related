@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  memoryleaker:
+    build: .
+    image: springboot:memoryleaker
+    container_name: sboot_memoryleaker
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 100M
+        reservations:
+          cpus: '0.25'
+          memory: 50M
