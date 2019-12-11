@@ -2,18 +2,17 @@
 
 **Ref from** [here](https://github.com/pradykaushik/cpu-load-generator)
 
-CPU Load generation, Completely Fair Schedule (CFS) and Testing CPU Requests/Limits
-
 ## CPU Requests/Limits - Scenario
-1. **If you set a Limit but don’t set a Request -** Kubernetes will default the Request to the Limit. This can be fine if you have very good knowledge of how much cpu time your workload requires. 
+1. If you set a Limit but don’t set a Request - Kubernetes will default the Request to the Limit. This can be fine if you have very good knowledge of how much cpu time your workload requires. 
 
-2. **If you set a Request with no Limit -** In this case kubernetes is able to accurately schedule your pod, and the kernel will make sure it gets at least the number of shares asked for, but your process will not be prevented from using more than the amount of cpu requested, which will be stolen from other process’s cpu shares when available. 
+2. If you set a Request with no Limit - In this case kubernetes is able to accurately schedule your pod, and the kernel will make sure it gets at least the number of shares asked for, but your process will not be prevented from using more than the amount of cpu requested, which will be stolen from other process’s cpu shares when available. 
 
-3. **If you dont set either a Request or a Limit (worst case scenario) -** The scheduler has no idea what the container needs, and the process’s use of cpu shares is unbounded, which may affect the node adversely. 
+3. If you dont set either a Request or a Limit (worst case scenario): The scheduler has no idea what the container needs, and the process’s use of cpu shares is unbounded, which may affect the node adversely. And that’s a good segue into the last thing I want to talk about: ensuring default limits in a namespace.
 
 ## Deployments
 1. kubeDeploymentUnbounded.yaml - No Requests or Limits
 2. kubeDeployment.yaml - Both Requests and Limits
+3. docker-compose.yml - Helps with testing on Local Docker Daemon
 
 ## Sample Output
 ```
