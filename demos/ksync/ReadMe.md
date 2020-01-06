@@ -87,7 +87,11 @@ Startup the local client. It watches your local config to start new jobs and the
 ζ ksync watch --daemon                                                                                     [813bd9b]
 INFO[0000] Sending watch to the background. Use clean to stop it.
 
-Start Syncing:
+````
+
+
+### Create a new Spec (watch will look out for configured specs and start syncing files when required)
+```
 #  kiran@mymachine: ~/Downloads/ksynctest                                               (11:02:32)
 ζ mkdir -p $(pwd)/ksync
 #  kiran@mymachine: ~/Downloads/ksynctest                                               (11:02:41)
