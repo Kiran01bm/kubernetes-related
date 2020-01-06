@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: memoryleakerunbounded
-        image: springboot/memoryleaker:latest
+        image: quay.io/kiran01bm/openjdk:memoryleaker
         ports:
         - containerPort: 80
         imagePullPolicy: IfNotPresent

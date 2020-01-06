@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: cpuloadgen
-        image: springboot/cpuloadgen:latest
+        image: quay.io/kiran01bm/openjdk:cpuloadgen
         ports:
         - containerPort: 80
         resources:
